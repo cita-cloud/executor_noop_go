@@ -1,0 +1,68 @@
+stage = "Finalize"
+
+[[micro_service_list]]
+image = "network_zenoh"
+tag = "latest"
+
+[[micro_service_list]]
+image = "consensus_overlord"
+tag = "latest"
+
+[[micro_service_list]]
+image = "executor_evm"
+tag = "latest"
+
+[[micro_service_list]]
+image = "storage_opendal"
+tag = "latest"
+
+[[micro_service_list]]
+image = "controller_hsm"
+tag = "latest"
+
+[[node_network_address_list]]
+cluster = "xqcZOjBO"
+domain = "0"
+host = "127.0.0.1"
+port = 40000
+svc_port = 40000
+
+[[node_network_address_list]]
+cluster = "t7dSyVxv"
+domain = "1"
+host = "127.0.0.1"
+port = 40001
+svc_port = 40000
+
+[[node_network_address_list]]
+cluster = "8dKpSzS8"
+domain = "2"
+host = "127.0.0.1"
+port = 40002
+svc_port = 40000
+
+[[node_network_address_list]]
+cluster = "Xu4gJPnx"
+domain = "3"
+host = "127.0.0.1"
+port = 40003
+svc_port = 40000
+
+[genesis_block]
+prevhash = "0x0000000000000000000000000000000000000000000000000000000000000000"
+timestamp = 1731491738494
+
+[system_config]
+admin = "a2ec545396052868038a2d9e45f1e36862d3a96f"
+block_interval = 3
+block_limit = 100
+chain_id = "63586a3c0255f337c77a777ff54f0040b8c388da04f23ecee6bfd4953a6512b4"
+quota_limit = 1073741824
+validators = [
+    "b7d2b81cfcca311afbc1b9c7828f2470ae93bf7cce37f82d15ab5281832b4b41903eed95673a5671944d3a4a3546fd58",
+    "88d54074bb66ff5b2d493accd3345f37f938abb50086663da5538e20ed9f05f6075a5e16f4ea8eb830cdc12e5a6ed506",
+    "b0bee217188e7fd46c8d31ed2d11eddc64066592fa08f8c58d468f0c0b71fdbf528ba06c76746997298880642330246f",
+    "9919d826eacb603d2422ef93a01c8c9813fd911895d6f3a6e50238e35df8f98a24b8e1ac1ea02f98f876c19a8e4dbd2b",
+]
+version = 0
+
