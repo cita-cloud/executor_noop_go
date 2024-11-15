@@ -7,6 +7,7 @@ import (
 )
 
 const ourPath = "github.com/cita-cloud/executor_noop_go"
+const VERSION = "v6.7.3"
 
 type GitInfo struct {
 	Commit string // head commit hash
@@ -55,19 +56,22 @@ func NewApp(usage string) *cli.App {
 	git, _ := NewGI()
 	app := cli.NewApp()
 	app.EnableBashCompletion = true
-	app.Version = VersionWithCommit(git.Commit, git.Date)
+	app.Version = VersionWithCommit(git)
 	app.Usage = usage
 	app.Copyright = "Copyright 2024 The Cita-Cloud Authors"
 	return app
 }
 
-func VersionWithCommit(gitCommit, gitDate string) string {
-	var vsn string
-	if len(gitCommit) >= 8 {
-		vsn += "-" + gitCommit[:8]
+func VersionWithCommit(git GitInfo) string {
+	vsn := VERSION
+	if len(git.Commit) >= 8 {
+		vsn += "-" + git.Commit[:8]
 	}
-	if gitDate != "" {
-		vsn += "-" + gitDate
+	if git.Date != "" {
+		vsn += "-" + git.Date
+	}
+	if git.Dirty == true {
+		vsn += "-dirty"
 	}
 	return vsn
 }
